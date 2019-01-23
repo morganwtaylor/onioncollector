@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% block title_tag %}Category | {{ category.title|lower|capfirst}}{% endblock %}
+{% block content %}
+
+<article>
+  <br>
+  <h2> {{ category.title|capfirst }} </h2>
+  <br>
+  There {{category.links.count|pluralize:"is,are"}} {{ category.links.count }} link{{ category.links.count|pluralize}} in this category.
+  <hr>
+  <section>
+      {% for link in category.links.all %}
+        {% include 'links/base/_link.html' %}
+      {% endfor %}
+  </section>
+
+
+</article>
+
+{% endblock %}

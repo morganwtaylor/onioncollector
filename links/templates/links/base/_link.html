@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<div class="content-container">
+  <div class="pt-4">
+      <div class="content-container">
+        <div class="content-upvote-container">
+          <a class='like-btn no-style' data-href='{{ link.get_like_url }}' data-likes='{{ link.likes.count }}' href='{{ link.get_like_url }}'><i class="fas fa-chevron-up voting-arrows"></i></a>
+
+            <p>{{ link.likes.count }}</p>
+          <i class="fas fa-chevron-down voting-arrows"></i>
+        </div>
+        <div class="content-info">
+          <div class="content-title">
+            <a href="{% url 'links:detail' slug=link.slug %}"><h1 class="link-title no-wrap t-l">{{ link.title|lower|title }}</h1></a>
+            <div class="link-category">
+              <p class="t-xs">{{ link.category|lower }}</p>
+            </div>
+            <p class="t-l">({{ link.link|urlize }})</p>
+            {% if link.nsfw == True %}
+            <div class="link-nsfw">
+              <p class="t-s">ADULT CONTENT</p>
+            </div>
+            {% endif %}
+          </div>
+          <div class="content-description">
+            <p class="t-m"> {% if link.description|wordcount <= 15 %}
+                              {{ link.description }}
+                            {% else %}
+                              {{ link.description|truncatewords:15 }}
+                              <a href="{% url 'links:detail' slug=link.slug %}">Read More</a>
+                            {% endif %}
+            </p>
+          </div>
+          <!-- Post Info & Options-->
+          <div class="content-details">
+            <p class="t-xs">submitted ({{ link.created_at|timesince }}) ago by <a href="{% url 'links:user_account' username=link.user.username %}">{{ link.user }}</a> in <a href="{% url 'links:category_detail' slug=link.category.slug %}">/{{link.category.slug}}</a></p>
+            <p class="t-s">
+              <span class="fas fa-star"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+              <span class='no-style' href="{% url 'links:detail' slug=link.slug %}"> 3 reviews</span> <button> Review</button>
+              <span> </p>
+          </div>
+
+          <!-- DELETE AND EDIT VIEW -->
+          {% if user.is_authenticated and link.user == user and not hide_delete %}
+            <a href="{% url 'links:update' slug=link.slug %}" title="update" class="btn btn-simple">
+              <i class="far fa-trash-alt"></i>
+              <span class="text-warning icon-label">Edit</span>
+            </a>
+            <a href="{% url 'links:delete' slug=link.slug %}" title="delete" class="btn btn-simple">
+    					<i class="far fa-trash-alt"></i>
+    					<span class="text-danger icon-label">Delete</span>
+    				</a>
+    			{% endif %}
+        </div>
+      </div>
+  </div>
+</div>

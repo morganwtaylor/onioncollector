@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h3 class='t-s text-center'>There are {{ links.count }} link{{link.count|pluralize}} created by users</h3>
+  {% for link in links %}
+    {% include "links/base/_link.html" %}
+  {% endfor %}
+{% endblock %}

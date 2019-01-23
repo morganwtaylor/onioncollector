@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<h1>{% if not form.instance.slug %}New Link{% else %}Edit {{ form.instance.title }}{% endif %}</h1>
+{% include 'links/base/_modal.html' %}
+<form method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+	<input type="submit" value="Post" class="btn btn-primary btn-large">
+</form>
+{% endblock %}

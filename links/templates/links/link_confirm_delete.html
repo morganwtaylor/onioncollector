@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title_tag %}Delete your message? | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated and link.user == user %}
+	<h3>Are you sure you want to delete "{{ object }}"?</h3>
+
+	<div class="posts">
+		{% include "links/base/_link.html" with link=object hide_delete=True %}
+	</div>
+
+	<br>
+
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" value="Yes, delete it" class="btn btn-danger btn-large">
+		<a href="{% url 'links:user_account' username=user.username  %}" class="btn btn-simple btn-large btn-default">Nope, nevermind</a>
+	</form>
+
+{% else %}
+	<h3>You are not allowed to delete "{{ object }}"?</h3>
+{% endif %}
+
+
+{% endblock %}

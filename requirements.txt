@@ -1,0 +1,13 @@
+Django==2.0.3
+django-bootstrap3==9.1.0
+django-generic-positions==0.2.2
+django-hvad==1.8.0
+django-libs==1.67.13
+django-user-media==1.2.5
+easy-thumbnails==2.5
+numpy==1.14.2
+Pillow==5.1.0
+psycopg2==2.7.4
+psycopg2-binary==2.7.4
+pytz==2018.3
+simplejson==3.13.2

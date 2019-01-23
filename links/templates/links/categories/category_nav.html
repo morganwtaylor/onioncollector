@@ -1,0 +1,3 @@
+{% for category in category %}
+  <a class="dropdown-item" href="{% url 'links:category_detail' slug=category.slug %}">{{ category.title|capfirst }}</a>
+{% endfor %}
