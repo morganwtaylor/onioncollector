@@ -2,7 +2,7 @@
 {% load bootstrap3 %}
 
 {% block content %}
-<h1>{% if not form.instance.pk %}New Link{% else %}Edit {{ form.instance.name }}{% endif %}</h1>
+<h1>{% if not form.instance.pk %}New Review{% else %}Edit Review{{ form.instance.name }}{% endif %}</h1>
 {% include 'links/base/_modal.html' %}
 <form method="POST">
   {% csrf_token %}

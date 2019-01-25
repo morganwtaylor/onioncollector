@@ -39,7 +39,13 @@
               <span class="far fa-star"></span>
               <span class="far fa-star"></span>
               <span class="far fa-star"></span>
-              <span class='no-style' href="{% url 'links:detail' slug=link.slug %}"> 3 reviews</span> <button> Review</button>
+                {% if reviews > 0 %}
+                  {{ reviews.count }}
+                {% else %}
+                  There are no reviews
+                {% endif %}
+              </span>
+              <a href="{% url 'links:review' slug=link.slug %}"> Review</a>
               <span> </p>
           </div>
 
