@@ -7,7 +7,7 @@ app_name="links"
 urlpatterns = [
     path('', views.AllLinks.as_view(), name='all'),
     path('category/<slug>/', views.CategoryDetailView.as_view(), name='category_detail'),
-    path("by/<username>/", views.UserAccount.as_view(), name="user_account"),
+    path("by/<username>/", views.UserLinkList.as_view(), name="user_account"),
     path(
         "create/",
         views.LinkCreate.as_view(),

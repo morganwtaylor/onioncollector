@@ -31,23 +31,18 @@ class CategoryDetailView(generic.DetailView):
     model = Category
     template_name = "links/categories/category_detail.html"
 
-class UserAccount(generic.ListView):
+class UserLinkList(generic.ListView):
     model = Link
-    template_name = "links/user_account.html"
+    template_name = "links/user_linklist.html"
+    context_object_name='links'
 
     def get_queryset(self):
-        try:
-            self.link_user = User.objects.prefetch_related('links').get(
-            username__iexact=self.kwargs.get('username')
-            )
-        except User.DoesNotExist:
-            raise Http404
-        else:
-            return self.link_user.links.all()
+            self.link_author = get_object_or_404(User, username=self.kwargs['username'])
+            return Link.objects.filter(user=self.link_author)
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        context['link_user']=self.link_user
+        context['link_author']=self.link_author
         return context
 
 

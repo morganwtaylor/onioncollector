@@ -6,3 +6,6 @@ db.sqlite3
 /media
 /static
 env/*
+venv/*
+migrations/*
+venv*
