@@ -2,10 +2,8 @@
 
 __pycache__/
 local_settings.py
-db.sqlite3
+sqlite3.db
 /media
 /static
-env/*
 venv/*
 migrations/*
-venv*
