@@ -21,6 +21,10 @@ class LinkAdmin(admin.ModelAdmin):
 
     list_editable=['category']
 
+class ReviewAdmin(admin.ModelAdmin):
+    fields = ['comment', 'rating']
+
 
 admin.site.register(models.Link, LinkAdmin)
 admin.site.register(models.Category, CategoryAdmin)
+admin.site.register(models.Review, ReviewAdmin)

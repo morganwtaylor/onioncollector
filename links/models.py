@@ -28,13 +28,13 @@ class Link(models.Model):
     """
     Model used for Deep Web links
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.DO_NOTHING, related_name='links')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, related_name='links', null=True)
     created_at = models.DateTimeField(
             auto_now=True)
     title = models.CharField(max_length=30)
     slug = models.SlugField(unique=True)
     description = models.TextField(max_length = 255)
-    category = models.ForeignKey(Category,on_delete=models.DO_NOTHING, related_name='links', null=True, blank=True)
+    category = models.ForeignKey(Category,on_delete=models.SET_NULL, related_name='links', null=True, blank=True)
     link = models.URLField(default = 'https://deepwebacademy.com')
     nsfw = models.BooleanField(default = False)
     votes = models.IntegerField(default = 1)
@@ -64,9 +64,18 @@ class Review(models.Model):
     """
     Allows users to review a links
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
+    RATING_CHOICES = (
+        (1, "1"),
+        (2, "2"),
+        (3, "3"),
+        (4, "4"),
+        (5, "5"),
+    )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    link = models.ForeignKey(Link, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now=True)
-    title = models.CharField(max_length=50)
+    comment = models.TextField(max_length=50, default='no review comment')
+    rating = models.CharField(max_length=1, choices=RATING_CHOICES)
 
     def get_absolute_url(self):
         return reverse("links:all")
