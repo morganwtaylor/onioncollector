@@ -75,7 +75,7 @@ class Review(models.Model):
     link = models.ForeignKey(Link, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now=True)
     comment = models.TextField(max_length=50, default='no review comment')
-    rating = models.CharField(max_length=1, choices=RATING_CHOICES)
+    # rating = models.CharField(max_length=1, choices=RATING_CHOICES)
 
     def get_absolute_url(self):
         return reverse("links:all")

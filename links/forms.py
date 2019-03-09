@@ -23,11 +23,10 @@ class ReviewForm(forms.ModelForm):
         model = models.Review
         fields = [
             "comment",
-            "rating",
+            # "rating",
         ]
 
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
-        link = kwargs.pop('link', None)
         super().__init__(*args, **kwargs)
