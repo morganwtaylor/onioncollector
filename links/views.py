@@ -88,6 +88,7 @@ class ReviewCreate(LoginRequiredMixin, generic.CreateView):
         return kwargs
 
     def form_valid(self, form):
+        form.instance.link = Link.objects.get(slug=self.kwargs.get('slug'))
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()

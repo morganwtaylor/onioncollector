@@ -64,9 +64,19 @@ class Review(models.Model):
     """
     Allows users to review a links
     """
+    RATING_CHOICES = (
+        (1, '1 Star'),
+        (2, '2 Star'),
+        (3, '3 Star'),
+        (4, '4 Star'),
+        (5, '5 Star')
+    )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
+    link = models.ForeignKey(Link, on_delete=models.DO_NOTHING)
     created_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=50)
+    review = models.TextField(max_length=250, default="")
+    rating = models.IntegerField(choices = RATING_CHOICES, default=1)
 
     def get_absolute_url(self):
         return reverse("links:all")

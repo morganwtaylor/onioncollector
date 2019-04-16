@@ -2,26 +2,12 @@
 {% load staticfiles %}
 {% block content %}
 
-  {% include 'links/base/_link.html' %}
-  {% for review in link.review_set.all %}
-    {{review.title}}
-    {{review.user}}
-  {% endfor %}
-  <br>
-  <br>
-  <div>
-    <h2> Reviews </h2>
-  </div>
-  <div>
-    <h3> "Test review summary"</h3>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
-    <p>morganwtaylor- Posted 1 Week Ago</p>
-  </div>
-  <div>
-    <p>This is the review summary area showing what the user has said. There isnt to much here to display.
-  </div>
+{% include 'links/base/_link.html' %}
+ {% for review in link.review_set.all %}
+  {{review.title}}
+  {{review.review}}
+  {{review.user}}
+  {{review.rating}}
+ {% endfor %}
+
 {% endblock %}

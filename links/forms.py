@@ -23,6 +23,8 @@ class ReviewForm(forms.ModelForm):
         model = models.Review
         fields = [
             "title",
+            "review",
+            "rating",
         ]
 
 
