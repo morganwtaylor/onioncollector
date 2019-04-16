@@ -75,8 +75,6 @@ class LinkDelete(LoginRequiredMixin, generic.DeleteView):
         messages.success(self.request, "Link successfullly deleted")
         return super().delete(*args, **kwargs)
 
-
-
 ### Review CRUD ###
 class ReviewCreate(LoginRequiredMixin, generic.CreateView):
     form_class = ReviewForm
