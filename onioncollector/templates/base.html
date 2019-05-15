@@ -135,5 +135,25 @@
     <!-- Standard JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
+    <script>
+        $.fn.stars = function() {
+        return $(this).each(function() {
+
+            var rating = $(this).data("rating");
+
+            var numStars = $(this).data("numStars");
+
+            var fullStar = new Array(Math.floor(rating + 1)).join('<i class="fas fa-star"></i>');
+
+
+            var noStar = new Array(Math.floor(numStars + 1 - rating)).join('<i class="far fa-star"></i>');
+
+            $(this).html(fullStar + noStar);
+
+        });
+    }
+
+    $('.stars').stars();
+    </script>
   </body>
 </html>

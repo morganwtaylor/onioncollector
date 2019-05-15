@@ -3,10 +3,10 @@
   <div class="pt-4">
       <div class="content-container">
         <div class="content-upvote-container">
-          <a class='like-btn no-style' data-href='{{ link.get_like_url }}' data-likes='{{ link.likes.count }}' href='{{ link.get_like_url }}'><i class="fas fa-chevron-up voting-arrows"></i></a>
+          <a><i class="far fa-clipboard"></i></a>
 
-            <p>{{ link.likes.count }}</p>
-          <i class="fas fa-chevron-down voting-arrows"></i>
+            <p>{{ link.review_set.count }} Review{{ link.review_set.count|pluralize  }}</p>
+
         </div>
         <div class="content-info">
           <div class="content-title">
@@ -33,20 +33,11 @@
           <!-- Post Info & Options-->
           <div class="content-details">
             <p class="t-xs">submitted ({{ link.created_at|timesince }}) ago by <a href="{% url 'links:user_account' username=link.user.username %}">{{ link.user }}</a> in <a href="{% url 'links:category_detail' slug=link.category.slug %}">/{{link.category.slug}}</a></p>
-            <p class="t-s">
-              <span class="fas fa-star"></span>
-              <span class="far fa-star"></span>
-              <span class="far fa-star"></span>
-              <span class="far fa-star"></span>
-              <span class="far fa-star"></span>
-                {% if reviews > 0 %}
-                  {{ reviews.count }}
-                {% else %}
-                  There are no reviews
-                {% endif %}
-              </span>
+            <p class="t-s"<p>
+                <span class="stars" data-rating="{{ link.average_rating }}" data-num-stars="5" ></span>
+                {{ link.average_rating }} out of {{ link.review_set.count }} Review{{ link.review_set|pluralize }}
               <a href="{% url 'links:review' slug=link.slug %}"> Review</a>
-              <span> </p>
+              </p>
           </div>
 
           <!-- DELETE AND EDIT VIEW -->
@@ -64,3 +55,4 @@
       </div>
   </div>
 </div>
+<hr>

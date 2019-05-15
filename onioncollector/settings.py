@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'links.apps.LinksConfig',
     'accounts.apps.AccountsConfig',
     'bootstrap3',
+    'vote',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

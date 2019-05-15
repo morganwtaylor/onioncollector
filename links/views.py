@@ -13,6 +13,8 @@ from django.views import generic
 from .models import Link, Category, Review
 from .forms import LinkForm, ReviewForm
 
+
+
 def home(request):
     return render(request, 'links/home.html')
 

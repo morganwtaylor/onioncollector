@@ -1,11 +1,12 @@
 from django.db import models
-
-from django.db import models
 from django.utils import timezone
 from django.conf import settings
 from django.urls import reverse
 from django.contrib.contenttypes.fields import GenericRelation
 from django.template.defaultfilters import slugify
+
+#extras
+import numpy as np
 
 class Category(models.Model):
     title = models.CharField(max_length=25)
@@ -51,10 +52,10 @@ class Link(models.Model):
         return reverse("links:detail", kwargs={'slug': self.slug})
 
     def average_rating(self):
-        all_ratings = map(lambda x: x.rating, self.review_set.all())
+        all_ratings = list(map(lambda x: x.rating, self.review_set.all()))
         return np.mean(all_ratings)
 
-    def save(self, *args, **kwargs):
+def save(self, *args, **kwargs):
         if not self.id:
             # Newly created object, so set slug
             self.slug = slugify(self.title)
