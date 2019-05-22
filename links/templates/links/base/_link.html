@@ -34,9 +34,15 @@
           <div class="content-details">
             <p class="t-xs">submitted ({{ link.created_at|timesince }}) ago by <a href="{% url 'links:user_account' username=link.user.username %}">{{ link.user }}</a> in <a href="{% url 'links:category_detail' slug=link.category.slug %}">/{{link.category.slug}}</a></p>
             <p class="t-s"<p>
-                <span class="stars" data-rating="{{ link.average_rating }}" data-num-stars="5" ></span>
-                {{ link.average_rating }} out of {{ link.review_set.count }} Review{{ link.review_set|pluralize }}
-              <a href="{% url 'links:review' slug=link.slug %}"> Review</a>
+                  {%  if link.review_set.count == 0 %}
+                    No Reviews-
+                  {% else %}
+                  <span class="stars" data-rating="{{ link.average_rating }}" data-num-stars="5" ></span>
+                    {{ link.average_rating }} out of {{ link.review_set.count }} Review{{ link.review_set.count|pluralize }}
+                  {% endif %}
+                  <a href="{% url 'links:review' slug=link.slug %}">
+                    <button type="button" class="btn btn-outline-info">Review</button>
+                  </a>
               </p>
           </div>
 

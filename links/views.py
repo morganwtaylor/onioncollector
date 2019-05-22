@@ -24,6 +24,8 @@ def home(request):
 class AllLinks(generic.ListView):
     context_object_name = 'links'
     model = Link
+    paginate_by = 10
+    queryset = Link.objects.all()
 
 class LinkDetailView(generic.DetailView):
     model = Link
