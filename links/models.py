@@ -7,6 +7,7 @@ from django.template.defaultfilters import slugify
 
 #extras
 import numpy as np
+import django_filters
 
 class Category(models.Model):
     title = models.CharField(max_length=25)
