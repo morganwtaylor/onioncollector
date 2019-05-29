@@ -12,14 +12,19 @@ from django.views import generic
 #models
 from .models import Link, Category, Review
 from .forms import LinkForm, ReviewForm
-
+#filters
+import django_filters
 
 
 def home(request):
     return render(request, 'links/home.html')
 
 
+####################
+
 #### MAIN VIEWS ####
+
+####################
 
 class AllLinks(generic.ListView):
     context_object_name = 'links'
@@ -29,7 +34,6 @@ class AllLinks(generic.ListView):
 
 class LinkDetailView(generic.DetailView):
     model = Link
-
 
 class CategoryDetailView(generic.DetailView):
     model = Category
@@ -50,7 +54,20 @@ class UserLinkList(generic.ListView):
         return context
 
 
+#################
+
+### Filtering Models ###
+
+#################
+
+
+
+#################
+
 ### LINK CRUD ###
+
+#################
+
 class LinkCreate(LoginRequiredMixin, generic.CreateView):
     form_class = LinkForm
     model = Link
@@ -66,7 +83,6 @@ class LinkCreate(LoginRequiredMixin, generic.CreateView):
         self.object.save()
         return super().form_valid(form)
 
-
 class LinkUpdate(LoginRequiredMixin, generic.UpdateView):
     model = Link
     form_class = LinkForm
@@ -79,7 +95,13 @@ class LinkDelete(LoginRequiredMixin, generic.DeleteView):
         messages.success(self.request, "Link successfullly deleted")
         return super().delete(*args, **kwargs)
 
+
+###################
+
 ### Review CRUD ###
+
+###################
+
 class ReviewCreate(LoginRequiredMixin, generic.CreateView):
     form_class = ReviewForm
     model = Review
@@ -95,7 +117,6 @@ class ReviewCreate(LoginRequiredMixin, generic.CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
-
 
 class ReviewUpdate(LoginRequiredMixin, generic.UpdateView):
     model = Review

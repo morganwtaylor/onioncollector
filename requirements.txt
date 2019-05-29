@@ -1,6 +1,7 @@
 Django==2.0.3
 django-bootstrap3==9.1.0
 django-braces==1.13.0
+django-filter==2.1.0
 django-generic-positions==0.2.2
 django-hvad==1.8.0
 django-libs==1.67.13

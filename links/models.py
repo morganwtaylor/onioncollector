@@ -56,7 +56,7 @@ class Link(models.Model):
         all_ratings = list(map(lambda x: x.rating, self.review_set.all()))
         return np.mean(all_ratings)
 
-def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
         if not self.id:
             # Newly created object, so set slug
             self.slug = slugify(self.title)
@@ -82,3 +82,11 @@ class Review(models.Model):
 
     def get_absolute_url(self):
         return reverse("links:all")
+
+
+class LinkFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(lookup_expr='iexact')
+
+    class Meta:
+        model = Link
+        fields = ['title', 'description', 'link']
