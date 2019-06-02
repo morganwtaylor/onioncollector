@@ -54,7 +54,7 @@ class Link(models.Model):
 
     def average_rating(self):
         all_ratings = list(map(lambda x: x.rating, self.review_set.all()))
-        return np.mean(all_ratings)
+        return np.round(np.mean(all_ratings), decimals=2)
 
     def save(self, *args, **kwargs):
         if not self.id:
