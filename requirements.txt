@@ -1,12 +1,11 @@
 Django==2.0.3
+django-bootstrap-form==3.4
 django-bootstrap3==9.1.0
 django-braces==1.13.0
-django-filter==2.1.0
 django-generic-positions==0.2.2
 django-hvad==1.8.0
 django-libs==1.67.13
 django-model-utils==3.1.2
-django-star-ratings==0.7.0
 django-user-media==1.2.5
 easy-thumbnails==2.5
 numpy==1.16.3
