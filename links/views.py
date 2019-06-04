@@ -13,7 +13,8 @@ from django.views import generic
 from .models import Link, Category, Review
 from .forms import LinkForm, ReviewForm
 #filters
-import django_filters
+import operator
+from django.db.models import Q
 
 
 def home(request):
@@ -29,7 +30,7 @@ def home(request):
 class AllLinks(generic.ListView):
     context_object_name = 'links'
     model = Link
-    paginate_by = 10
+    paginate_by = 5
     queryset = Link.objects.all()
 
 class LinkDetailView(generic.DetailView):
@@ -59,8 +60,6 @@ class UserLinkList(generic.ListView):
 ### Filtering Models ###
 
 #################
-
-
 
 #################
 
