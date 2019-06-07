@@ -7,7 +7,6 @@ from django.template.defaultfilters import slugify
 
 #extras
 import numpy as np
-import django_filters
 
 class Category(models.Model):
     title = models.CharField(max_length=25)
@@ -83,10 +82,3 @@ class Review(models.Model):
     def get_absolute_url(self):
         return reverse("links:all")
 
-
-class LinkFilter(django_filters.FilterSet):
-    name = django_filters.CharFilter(lookup_expr='iexact')
-
-    class Meta:
-        model = Link
-        fields = ['title', 'description', 'link']
