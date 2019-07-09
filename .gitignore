@@ -7,3 +7,4 @@ sqlite3.db
 /static
 .venv/*
 migrations/*
+*.db
