@@ -32,3 +32,4 @@ urlpatterns = [
     path('<slug>/', views.LinkDetailView.as_view(), name='detail'),
 
 ]
+#test
