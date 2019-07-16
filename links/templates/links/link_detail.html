@@ -3,11 +3,19 @@
 {% block content %}
 
 {% include 'links/base/_link.html' %}
- {% for review in link.review_set.all %}
-  {{review.title}}
-  {{review.review}}
-  {{review.user}}
-  {{review.rating}}
- {% endfor %}
-
+    <h4 style="text-align:center">Reviews for this link.</h4>
+    <hr>
+    {%  if link.review_set.count == 0 %}
+        <p>No review yet :( </p>
+    {%  else %}
+         {% for review in link.review_set.all %}
+             <div class="review">
+                 <p">{{review.title}}</p>
+                 <span class="stars" data-rating="{{ review.rating }}" data-num-stars="5" ></span>
+                 {{ review.rating}}/5
+             "<i>{{ review.review }}</i>"
+             <p class="t-xs">submitted ({{ review.created_at|timesince }}) ago by <a href="{% url 'links:user_account' username=review.user.username %}">{{ review.user }}</a> </p>
+             <br>
+         {% endfor %}
+    {%  endif %}
 {% endblock %}
