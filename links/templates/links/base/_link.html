@@ -22,9 +22,12 @@
             {% endif %}
           </div>
           <div class="content-description">
-            <p class="t-m">
-                {{ link.description|truncatewords:15 }}
-                <a href="{% url 'links:detail' slug=link.slug %}">Read More</a>
+            <p class="t-m"> {% if link.description|wordcount <= 15 %}
+                              {{ link.description }}
+                            {% else %}
+                              {{ link.description|truncatewords:15 }}
+                              <a href="{% url 'links:detail' slug=link.slug %}">Read More</a>
+                            {% endif %}
             </p>
           </div>
           <!-- Post Info & Options-->
