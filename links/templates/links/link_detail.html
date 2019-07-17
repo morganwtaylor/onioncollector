@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 
-{% include 'links/base/_link.html' %}
+{% include 'links/base/_link_detail.html' %}
     <h4 style="text-align:center">Reviews for this link.</h4>
     <hr>
     {%  if link.review_set.count == 0 %}
