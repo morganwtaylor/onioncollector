@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class LinkAdmin(admin.ModelAdmin):
     inlines=[ReviewInline]
-    fields = ['user', 'link', 'category', 'nsfw', 'votes', 'title', 'description', 'likes']
+    fields = ['user', 'link', 'category', 'nsfw', 'votes', 'title', 'description', 'featured', 'approved']
     search_fields = ['title', 'description', 'link']
     list_filter=['created_at']
 

@@ -32,6 +32,8 @@ class Link(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.DO_NOTHING, related_name='links')
     created_at = models.DateTimeField(
             auto_now=True)
+    approved = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
     title = models.CharField(max_length=30)
     slug = models.SlugField(unique=True)
     description = models.TextField(max_length = 255)
@@ -45,7 +47,7 @@ class Link(models.Model):
         return self.title
 
     class Meta:
-        ordering = ["-created_at"]
+        ordering = ["-featured", "-created_at"]
         unique_together = ['user', 'title']
 
     def get_absolute_url(self):
@@ -70,7 +72,7 @@ class Review(models.Model):
         (2, '2 Star'),
         (3, '3 Star'),
         (4, '4 Star'),
-        (5, '5 Star')
+        (5, '5 Star'),
     )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
     link = models.ForeignKey(Link, on_delete=models.DO_NOTHING)

@@ -22,18 +22,13 @@
             {% endif %}
           </div>
           <div class="content-description">
-            <p class="t-m"> {% if link.description|wordcount <= 15 %}
-                              {{ link.description }}
-                            {% else %}
-                              {{ link.description|truncatewords:15 }}
-                              <a href="{% url 'links:detail' slug=link.slug %}">Read More</a>
-                            {% endif %}
+            <p class="t-m">{{ link.description }}
             </p>
           </div>
           <!-- Post Info & Options-->
           <div class="content-details">
             <p class="t-xs">submitted ({{ link.created_at|timesince }}) ago by <a href="{% url 'links:user_account' username=link.user.username %}">{{ link.user }}</a> in <a href="{% url 'links:category_detail' slug=link.category.slug %}">/{{link.category.slug}}</a></p>
-            <p class="review t-s"<p>
+            <p class="t-s"<p>
                   {%  if link.review_set.count == 0 %}
                     No Reviews-
                   {% else %}
@@ -41,7 +36,7 @@
                     {{ link.average_rating }} out of {{ link.review_set.count }} Review{{ link.review_set.count|pluralize }}
                   {% endif %}
                   <a href="{% url 'links:review' slug=link.slug %}">
-                    <button type="button" class="btn-xsm btn-outline-info">Review</button>
+                    <button type="button" class="btn btn-outline-info">Review</button>
                   </a>
               </p>
           </div>
