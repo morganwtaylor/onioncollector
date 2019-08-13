@@ -125,7 +125,9 @@
 
 
 
-
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
     <script>
         $.fn.stars = function() {
         return $(this).each(function() {
@@ -142,10 +144,10 @@
 
             $(this).html(fullStar + halfStar + noStar);
 
-        });
-    }
+            });
+     }
 
-    $('.stars').stars();
+     $('.stars').stars();
     </script>
   </body>
 </html>

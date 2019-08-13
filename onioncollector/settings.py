@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'links.apps.LinksConfig',
     'accounts.apps.AccountsConfig',
+    'bootstrap_modal_forms',
     'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
