@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9e5a7aa-64d0-4762-be99-9f6e1f5b42ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onioncollector/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/onioncollector/settings.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/env/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,23 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/links/views.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/onioncollector/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="412">
+              <caret line="146" column="72" selection-start-line="146" selection-start-column="72" selection-end-line="146" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/onioncollector/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="272">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -74,9 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runtime.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -145,10 +146,12 @@
         <option value="$PROJECT_DIR$/links/views.py" />
         <option value="$PROJECT_DIR$/onioncollector/static/css/link.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/onioncollector/settings.py" />
         <option value="$PROJECT_DIR$/onioncollector/templates/base.html" />
         <option value="$PROJECT_DIR$/links/templates/links/base/_link.html" />
         <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/runtime.txt" />
+        <option value="$PROJECT_DIR$/onioncollector/wsgi.py" />
+        <option value="$PROJECT_DIR$/onioncollector/settings.py" />
       </list>
     </option>
   </component>
@@ -169,6 +172,11 @@
           <expand>
             <path>
               <item name="onioncollector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onioncollector" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onioncollector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onioncollector" type="462c0819:PsiDirectoryNode" />
               <item name="onioncollector" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -224,7 +232,7 @@
       <workItem from="1568060974212" duration="6000" />
       <workItem from="1568410325738" duration="17000" />
       <workItem from="1569519103814" duration="638000" />
-      <workItem from="1569881987029" duration="253000" />
+      <workItem from="1569881987029" duration="582000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed model save issue">
       <created>1559099605377</created>
@@ -310,11 +318,32 @@
       <option name="project" value="LOCAL" />
       <updated>1569882087972</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Updated procfile and added runtime text">
+      <created>1569882304576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569882304576</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Installed WhiteNoise and Update Static Root in Settings.py">
+      <created>1569882456920</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1569882456920</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Updated WSGI with whitenoise settings">
+      <created>1569882546253</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569882546253</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25865000" />
+    <option name="totallyTimeSpent" value="26194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3192" y="-157" width="1696" height="1026" extended-state="6" />
@@ -331,8 +360,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32822758" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3281075" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32922733" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4922879" visible="true" weight="0.38969764" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32896653" />
@@ -398,7 +427,10 @@
     <MESSAGE value="Change to Review Button Size" />
     <MESSAGE value="Added boostrap modal forms to requests" />
     <MESSAGE value="added procfile and gunicorn" />
-    <option name="LAST_COMMIT_MESSAGE" value="added procfile and gunicorn" />
+    <MESSAGE value="Updated procfile and added runtime text" />
+    <MESSAGE value="Installed WhiteNoise and Update Static Root in Settings.py" />
+    <MESSAGE value="Updated WSGI with whitenoise settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated WSGI with whitenoise settings" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/links/templates/links/link_filter.html" />
@@ -459,13 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onioncollector/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -551,7 +576,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onioncollector/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onioncollector/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="146" column="72" selection-start-line="146" selection-start-column="72" selection-end-line="146" selection-end-column="72" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
