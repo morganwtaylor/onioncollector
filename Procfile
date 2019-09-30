@@ -1,0 +1,1 @@
+web: gunicorn onioncollector.wsgi --log-file -
